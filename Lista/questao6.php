@@ -1,9 +1,7 @@
 <?php
-
 $a = 10;
 $b = 15;
 $c = 20;
-
 if($a >= $b && $a >= $c){
     echo "$a é o maior numero";
 }elseif($b >= $a && $b >= $c){
@@ -11,5 +9,4 @@ if($a >= $b && $a >= $c){
 }else{
     echo "$c é o maior numero";
 }
-
 ?>
