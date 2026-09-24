@@ -1,6 +1,6 @@
 <?php 
 
-require_once __DIR__ . '/../models/tarefa.php';
+require_once __DIR__ . '/../model/tarefa.php';
 
 class tarefaController{
     private $tarefaModel; 
@@ -11,7 +11,7 @@ class tarefaController{
 
     public function index(){
         $tarefas = $this->tarefaModel->listar(); 
-        include __DIR__ . '/../views/listar.php'; 
+        include __DIR__ . '/../view/listar.php'; 
     }
 
     public function criar(){
@@ -27,6 +27,14 @@ class tarefaController{
         }
         header("Location: index.php"); 
     }
+
+    public function editar(){
+        if(isset($_POST['id']) && isset($_POST['descricao']) && !empty(trim($_POST['descricao']))){
+            $this->tarefaModel->editar($_POST['descricao'], $_POST['id']);
+        }
+        header("Location: index.php");
+    }
+
     
 }
 
